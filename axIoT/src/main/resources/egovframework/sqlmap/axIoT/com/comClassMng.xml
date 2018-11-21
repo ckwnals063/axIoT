@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<!-- 
+ * =================================================================
+ * 작성일 : 2018.05.25
+ * 상세설명 : 강의자료실
+ * 작성자 : ywkim
+ * =================================================================
+ * 수정일         작성자             내용     
+ * =================================================================
+ * 
+ * ================================================================= 
+ -->
+
+<sqlMap namespace="comClassMng">
+
+	<typeAlias alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias alias="paramMap" type="java.util.Map"/>
+
+	
+	
+	
+	<!-- comClassMng.selectClassMngDetail [해당과목 강의자료 조회] -->
+    <!-- 2018.05.25 최초작성 -->    
+	<select id="comClassMng.selectClassMngDetail" resultClass="egovMap">
+		/* comClassMng.selectClassMngDetail[해당과목 강의자료 조회] */
+        <![CDATA[
+			SELECT
+				USER_NAME
+				,date_format(TIME, "%Y-%m-%d %H:%m:%d ") as TIME
+				,BEAT_RATE
+			FROM
+				HEARTBEAT
+				
+		]]>
+		
+	</select>
+	
+</sqlMap>

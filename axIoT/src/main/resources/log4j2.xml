@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d %5p [%c] %m%n" />
+        </Console>
+        <RollingFile name="file" fileName="./logs/axIoT.log" filePattern="./logs/rolling/axIoT.log.%d{yyyy-MM-dd-HH-mm-ss}" bufferedIO="true" immediateFlush="true" append="true">
+            <PatternLayout pattern="%d %5p [%c] %m%n" />
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="3" fileIndex="min" />
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Logger name="java.sql" level="debug" additivity="false">
+            <AppenderRef ref="console" />
+            <AppenderRef ref="file"/>
+        </Logger>
+        
+        <Logger name="jdbc.sqltiming" level="debug" additivity="false">
+            <AppenderRef ref="console" />
+            <AppenderRef ref="file"/>
+        </Logger>
+        
+        <Logger name="jdbc.sqlonly" level="debug" additivity="false">
+            <AppenderRef ref="console"/>
+            <AppenderRef ref="jdbc-trace"/>
+        </Logger>
+        
+        <Logger name="egovframework" level="debug" additivity="false">
+            <AppenderRef ref="console" />
+            <AppenderRef ref="file"/>
+        </Logger>
+        
+        <Logger name="org.springframework" level="debug" additivity="false">
+            <AppenderRef ref="console" />
+            <AppenderRef ref="file"/>
+        </Logger>
+       
+        <Root level="debug">
+            <AppenderRef ref="console"/>
+            <AppenderRef ref="file"/>
+        </Root>
+    </Loggers>
+</Configuration>
