@@ -19,9 +19,9 @@
     <!-- Mysql  -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://52.79.170.189:3306/MIBAND?autoReconnection=true" />
-        <property name="username" value="root"/>
-        <property name="password" value="005410"/>
+        <property name="url" value="jdbc:mysql://xxx.xxx.xxx.xxx:3306/MIBAND?autoReconnection=true" />
+        <property name="username" value="ID"/>
+        <property name="password" value="password"/>
         <property name="validationQuery" value="select 1"/>
     </bean>
     
